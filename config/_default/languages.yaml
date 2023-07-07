@@ -6,3 +6,5 @@ fr:
   languageCode: fr
   languageName: Français
   permalinks:
+    categories: /actualites/:slug/
+    posts: /actualites/:year-:month-:day-:slug/
