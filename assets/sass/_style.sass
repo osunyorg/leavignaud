@@ -1,0 +1,90 @@
+header#document-header
+    display: none
+
+.hero
+    margin-bottom: 0
+    padding-top: 0
+    .content
+        padding-top: 0
+        padding-bottom: var(--grid-gutter)
+    .hero-text
+        // margin-top: 0 !important
+    h1
+        animation: glow-color 5s linear infinite
+        max-width: 4ch
+        transition: color 5s
+        text-transform: lowercase
+
+
+@keyframes glow-color
+    0%
+        color: #412805
+    70%
+        color: #000000
+    100%
+        color: #412805
+
+body
+    background-image: radial-gradient(circle at right bottom,rgba(246, 223, 155, 1) 0%, rgba(248, 176, 58, 1) 10%, rgba(77, 164, 191, 1) 65%,#5d9eb4 100%)
+    background-attachment: fixed
+    min-height: 100vh
+    transition: background-size 5s
+    animation: move-bg 5s linear infinite
+
+@keyframes move-bg
+    0%
+        background-size: 150%
+    70%
+        background-size: 100%
+    100%
+        background-size: 150%
+
+.block-links
+    .top
+        margin-bottom: $spacing-3
+        .block-title
+            @include small
+            text-transform: lowercase
+    .links
+        display: flex !important
+        flex-wrap: wrap
+        gap: $spacing-2
+        li
+            background: transparent !important
+            margin: 0 !important
+            @include meta
+            a
+                span::after
+                    content: ' ↗'
+                    position: relative
+                    display: inline-block
+                    position: relative
+                    transition: transform 0.3s $arrow-ease-transition
+                    transform: translate(0px, #{pxToRem(3)})
+            &:hover
+                a
+                    color: var(--color-text) !important
+                    span::after
+                        transform: translate(7px, -3px)
+            .link-content
+                padding: 0 !important
+                min-height: 0 !important
+                background: none !important
+
+#document-footer
+    padding-bottom: 0 !important
+    .contact
+        a
+            @include h2
+            text-decoration: none !important
+            text-transform: lowercase
+            &::after
+                content: ' →'
+                font-family: inherit
+                display: inline-block
+                transition: all 0.3s $arrow-ease-transition
+                opacity: 0
+            &:hover
+                &::after
+                    transform: translateX(30px)
+                    opacity: 1
