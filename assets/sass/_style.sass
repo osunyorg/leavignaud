@@ -16,11 +16,15 @@ $sun-animation-duration: 7s
 
 @keyframes glow-color
     0%
-        color: #000000
+        color: #FFFFFF
+    30%
+        color: #FFFFFF
     50%
-        color: #482806
+        color: #9dff09
+    60%
+        color: #FFFFFF
     100%
-        color: #000000
+        color: #FFFFFF
 
 
 header#document-header
@@ -33,24 +37,21 @@ header#document-header
         padding-top: 0
         padding-bottom: var(--grid-gutter)
     h1
-        max-width: 4ch
-        text-transform: lowercase
+        margin-bottom: $spacing-5
         @include glow-text
 
 body
-    background-image: radial-gradient(circle at right bottom,#ebfa7f 0%, #f8bf3a 10%, #135bec 65%,#991cac 100%)
+    background-image: radial-gradient(circle at right bottom,#ebfa7f 0%, #f8bf3a 10%, #ff61c2 65%,#ff1e6d 100%)
     background-attachment: fixed
     min-height: 100vh
     transition: background-size $sun-animation-duration
     animation: move-bg $sun-animation-duration linear infinite
-
 
 .block-links
     .top
         margin-bottom: $spacing-3
         .block-title
             @include small
-            text-transform: lowercase
             @include glow-text
 
     .links

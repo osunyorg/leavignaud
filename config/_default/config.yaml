@@ -1,3 +1,6 @@
 theme: osuny
-enableRobotsTXT: true
-removePathAccents: true
+_merge: deep
+params:
+  home:
+    head:
+      title: site
